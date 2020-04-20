@@ -1,0 +1,15 @@
+version: '2'
+services:
+    nesatmo:
+        container_name: netatmo-influxdb
+        image: netatmo-influxdb 
+        restart: unless-stopped
+        environment:
+          - NETATMO_CLIENT_ID=fd94c54d7fd94c8eb293      # Your Netatmo Client ID
+          - NETATMO_CLIENT_SECRET=85a88eb               # Your Netatmo Client Secret
+          - NETATMO_CLIENT_USERNAME=test@abc.com        # Your Netatmo E-Mail
+          - NETATMO_CLIENT_PASSWORD=                    # Your Netatmo Passwort 
+          - INFLUX_URL_WITH_PORT=http://127.0.0.1:8086  # Set your InfluxDB Server  
+          - INFLUX_DB=netatmo                           # Create a Database and set it here
+          - INFLUX_USER=netatmo                         # Create a User in InfluxDB
+          - INFLUX_PASS=netatmopass                     # Influx DB Password
